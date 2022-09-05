@@ -1,3 +1,7 @@
+// Milyen lesz az adatok szerkezete?
+// Hogyan tárolom az adatokat, milyen változókban?
+// Milyen műveleteket kell végeznem az adatokkal vagy az adatokon?
+
 /*
 Todo:
 id: number
