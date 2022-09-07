@@ -1,3 +1,5 @@
+import myPromise from "./practice.js";
+
 // Kati megigéri Pistinek hogy süt neki tortát.
 const cakePromise = new Promise( (resolve, reject) => {
     setTimeout( () => {
@@ -56,3 +58,9 @@ fetch('https://nettuts.hu/jms/nagyrobi/products').then(
 );
 
 console.log('Elküldtük a kérést a szerverre!');
+
+// MyPromise tesztelése.
+myPromise([4, '6', 9]).then(
+    newArray => console.log(newArray),
+    err => console.error(err),
+);
