@@ -1,4 +1,5 @@
 import myPromise from "./practice.js";
+import { getProducts } from './async-await.js';
 
 // Kati megigéri Pistinek hogy süt neki tortát.
 const cakePromise = new Promise( (resolve, reject) => {
@@ -64,3 +65,23 @@ myPromise([4, '6', 9]).then(
     newArray => console.log(newArray),
     err => console.error(err),
 );
+
+( async () => {
+    const products = await getProducts();
+    console.log(products);
+})();
+
+console.log('before top-level await');
+
+try {
+    const products = await getProducts();
+    console.log(products);    
+} catch (e) {
+    console.error(e);
+}
+
+console.log('after top-level await');
+// getProducts().then(
+//     products => console.log(products),
+//     err => console.error(err),
+// );
