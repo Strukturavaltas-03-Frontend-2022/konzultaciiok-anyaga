@@ -46,11 +46,11 @@ Array.from(onlyNumberInputs).forEach( input => {
 });
 
 //     phoneNumber.length === 15
-    //     && phoneNumber[0] === '+' 
-    //     && typeof parseInt(phoneNumber.slice(1, 3)) === 'number'
-    //     && phoneNumber[3] === '-' 
-    //     && typeof parseInt(phoneNumber.slice(4, 6)) === 'number'
-    //     && phoneNumber[6] === '-' 
-    //     && typeof parseInt(phoneNumber.slice(7, 10)) === 'number'
-    //     && phoneNumber[10] === '-' 
-    //     && typeof parseInt(phoneNumber.slice(11)) === 'number'
+//     && phoneNumber[0] === '+' 
+//     && typeof parseInt(phoneNumber.slice(1, 3)) === 'number'
+//     && phoneNumber[3] === '-' 
+//     && typeof parseInt(phoneNumber.slice(4, 6)) === 'number'
+//     && phoneNumber[6] === '-' 
+//     && typeof parseInt(phoneNumber.slice(7, 10)) === 'number'
+//     && phoneNumber[10] === '-' 
+//     && typeof parseInt(phoneNumber.slice(11)) === 'number'
