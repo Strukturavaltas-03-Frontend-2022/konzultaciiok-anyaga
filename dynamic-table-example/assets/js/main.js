@@ -1,5 +1,6 @@
 // 1. lépés: importáljuk a szükséges változókat.
 import { apiUrl, tableColumns } from './settings.js';
+import { fillTable } from './utils.js';
 
 // 2. lépés: felvesszük a változókat.
 const tBody = document.querySelector('.dynamic-table tbody');
@@ -12,19 +13,5 @@ const getProducts = async () => {
     return productList;
 };
 
-const fillTable = (list = [sampleProduct], body) => {    
-    body.innerHTML = '';
-    list.forEach( prod => {
-        const tr = document.createElement('tr');
-        body.appendChild(tr);
-
-        tableColumns.forEach( col => {
-            const td = document.createElement('td');
-            tr.appendChild(td);
-            td.textContent = prod[col];
-        });
-    });
-};
-
 const productList = await getProducts();
-fillTable(productList, tBody);
+fillTable(productList, tableColumns, tBody);
