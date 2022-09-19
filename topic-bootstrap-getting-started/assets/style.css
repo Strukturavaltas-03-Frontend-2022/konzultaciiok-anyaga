@@ -1,0 +1,8 @@
+/*
+Bootstrap direktíva felülírása.
+*/
+.btn-primary {
+    color: #fff;
+    background-color: #6cf609;
+    border-color: black;
+}
