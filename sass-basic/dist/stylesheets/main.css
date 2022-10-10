@@ -1,0 +1,42 @@
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+  background-color: #da4a4a;
+}
+
+.container {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row {
+  margin: 0;
+  padding: 0;
+}
+.row [class^=col-] {
+  padding: 12px;
+  box-sizing: border-box;
+  display: inline-block;
+  border: none;
+}
+.row .col-1 {
+  width: 8%;
+}
+.row .col-2 {
+  width: 16%;
+}
+.row .col-3 {
+  width: 24%;
+}
+.row .col-4 {
+  width: 32%;
+}
+.row .col-5 {
+  width: 39%;
+}
+.row .col-6 {
+  width: 49%;
+}
+
+/*# sourceMappingURL=main.css.map */

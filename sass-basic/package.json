@@ -1,0 +1,13 @@
+{
+  "name": "sass-basic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "style": "sass --watch ./src/stylesheets:./dist/stylesheets"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
