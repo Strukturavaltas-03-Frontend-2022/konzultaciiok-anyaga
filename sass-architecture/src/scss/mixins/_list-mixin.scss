@@ -1,0 +1,18 @@
+@mixin reset-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@mixin horizontal-list($margin: 2px) {
+    @include reset-list;
+
+    li {
+        display: inline-block;
+
+        margin: {
+            left: -1 * $margin;
+            right: 2em;
+        }
+    }
+}
