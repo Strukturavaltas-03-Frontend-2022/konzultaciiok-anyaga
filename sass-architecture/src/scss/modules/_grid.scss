@@ -3,5 +3,5 @@
 @import '../variables/variables';
 
 .container {
-    max-width: map.get($config, 'maxWidth');
+    max-width: map.get($config, container, maxWidth);
 }
