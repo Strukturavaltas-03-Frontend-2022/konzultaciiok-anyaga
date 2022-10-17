@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "module": "system",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "outFile": "./dist/main.js",
+        "sourceMap": true
+    },
+    "include": ["src/main.ts"],
+    "exclude": ["node_modules", "**/*.spec.ts"]
+}
