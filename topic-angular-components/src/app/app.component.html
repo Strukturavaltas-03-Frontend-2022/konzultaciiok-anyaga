@@ -1,0 +1,7 @@
+<app-navigation></app-navigation>
+<div class="container">
+  {{ appTitle }}
+  <app-home
+    (titleChange)="updateTitle($event)"
+    [homeTitle]="appTitle"></app-home>
+</div>
