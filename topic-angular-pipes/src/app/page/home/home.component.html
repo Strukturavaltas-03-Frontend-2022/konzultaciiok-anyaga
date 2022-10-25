@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-12 col-md-5 col-xl-4">
+    <div class="card">
+      <div class="card-header">
+        User Card
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{ userList[0].firstName }} {{ userList[0].lastName }}</h5>
+        <p class="card-text">Email: {{ userList[0].email | lowercase }}</p>
+        <p class="card-text">BD: {{ userList[0].birthDate | datehu }}</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-md-5 col-xl-4">
+    <div class="card">
+      <div class="card-header">
+        User Card
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{ userList[1].firstName }} {{ userList[1].lastName }}</h5>
+        <p class="card-text">Email: {{ userList[1].email | lowercase }}</p>
+        <p class="card-text">BD: {{ userList[1].birthDate | datehu:'short' }}</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-md-5 col-xl-4">
+    <div class="card">
+      <div class="card-header">
+        User Card
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{ userList[2].firstName }} {{ userList[2].lastName }}</h5>
+        <p class="card-text">Email: {{ userList[2].email | lowercase }}</p>
+        <p class="card-text">BD: {{ userList[2].birthDate | datehu }}</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<pre>
+  {{ userList | json }}
+</pre>
