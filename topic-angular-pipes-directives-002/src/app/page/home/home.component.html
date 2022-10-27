@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-12 my-2">
+    <!-- <input [(ngModel)]="phrase" class="form-control" type="text"> -->
+    <div class="input-group mb-3">
+      <div class="input-group-text">
+        <select [(ngModel)]="filterKey" class="form-control">
+          <option value="">filter everywhere</option>
+          <option *ngFor="let col of columns" [value]="col.key">
+            {{ col.title }}
+          </option>
+        </select>
+      </div>
+      <input [(ngModel)]="phrase" class="form-control" type="text">
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th *ngFor="let col of columns"> {{ col.title }} </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let customer of customerList | filter:phrase:filterKey">
+          <td *ngFor="let col of columns">{{ customer[col.key] }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
