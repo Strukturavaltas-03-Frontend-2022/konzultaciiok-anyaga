@@ -20,3 +20,8 @@ is.
 - A DrogComponent-ben lévő táblázatban legyen lehetőség törölni az egyes  
 gyógyszereket. Legyen egy gomb a táblázat utolsó oszlopában, amire kattintva  
 törlődik az adott adatsor.
+
+## 6. feladat
+- A drug táblázat felett legyen egy beviteli mező és egy gomb egy sorban, 
+ha a beviteli mezőbe szöveget írnak be, akkor a táblázat Brand oszlopában 
+keressünk és az ott található adatok alapján szűrjük a táblázatot.

@@ -12,6 +12,8 @@ export class DrugComponent implements OnInit {
 
   drugList$: Observable<Drug[]> = this.drugService.getAll();
 
+  filterPhrase: string = '';
+
   constructor(
     private drugService: DrugService,
   ) { }

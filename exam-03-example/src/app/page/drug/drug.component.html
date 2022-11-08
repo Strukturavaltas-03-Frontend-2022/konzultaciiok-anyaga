@@ -1,36 +1,62 @@
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <!-- id?: number = 0;
-  name: string = '';
-  brand: string = '';
-  company: string = '';
-  barcode: string = '';
-  stock: number = 0; -->
-      <th>#</th>
-      <th>Name</th>
-      <th>Brand</th>
-      <th>Company</th>
-      <th>Barcode</th>
-      <th>Stock</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let drug of drugList$ | async">
-      <td>{{ drug.id }}</td>
-      <td>{{ drug.name }}</td>
-      <td>{{ drug.brand }}</td>
-      <td>{{ drug.company }}</td>
-      <td>{{ drug.barcode }}</td>
-      <td>{{ drug.stock }}</td>
-      <td>
-        <div class="btn-group">
-          <button (click)="onDelete(drug)" class="btn btn-danger">
-            <i class="fa fa-trash"></i>
-          </button>
-        </div>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="row mt-3">
+  <div class="col-12">
+    <div class="input-group mb-3">
+      <input
+        [(ngModel)]="filterPhrase"
+        type="text"
+        class="form-control"
+        placeholder="Drug's brand"
+        aria-label="Recipient's username"
+        aria-describedby="button-addon2"
+      >
+      <button
+        class="btn btn-outline-secondary"
+        type="button"
+        id="button-addon2"
+      >Button</button>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <!-- id?: number = 0;
+            name: string = '';
+            brand: string = '';
+            company: string = '';
+            barcode: string = '';
+            stock: number = 0; -->
+          <th>#</th>
+          <th>Name</th>
+          <th>Brand</th>
+          <th>Company</th>
+          <th>Barcode</th>
+          <th>Stock</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let drug of drugList$ | async | filter:filterPhrase:'brand'">
+          <td>{{ drug.id }}</td>
+          <td>{{ drug.name }}</td>
+          <td>{{ drug.brand }}</td>
+          <td>{{ drug.company }}</td>
+          <td>{{ drug.barcode }}</td>
+          <td>{{ drug.stock }}</td>
+          <td>
+            <div class="btn-group">
+              <button
+                (click)="onDelete(drug)"
+                class="btn btn-danger"
+              >
+                <i class="fa fa-trash"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
