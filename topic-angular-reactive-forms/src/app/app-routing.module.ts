@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './page/home/home.component';
 import { UserEditorComponent } from './page/user-editor/user-editor.component';
 import { UserComponent } from './page/user/user.component';
+import { UserCardComponent } from './page/usercard/user.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'user',
     component: UserComponent,
+  },
+  {
+    path: 'usercard',
+    component: UserCardComponent,
   },
   {
     path: 'user/edit/:id',

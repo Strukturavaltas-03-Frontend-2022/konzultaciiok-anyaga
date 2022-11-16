@@ -10,7 +10,7 @@ import { UserService } from 'src/app/service/user.service';
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.scss']
 })
-export class UserComponent implements OnInit {
+export class UserCardComponent implements OnInit {
 
   columns: ITableColumn[] = this.config.userTableColumns;
 
