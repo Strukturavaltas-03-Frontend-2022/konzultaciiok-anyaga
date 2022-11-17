@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { DEFAULT_CURRENCY_CODE, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -11,6 +11,9 @@ import { UserComponent } from './page/user/user.component';
 import { UserEditorComponent } from './page/user-editor/user-editor.component';
 import { FilterPipe } from './pipe/filter.pipe';
 import { UserCardComponent } from './page/usercard/user.component';
+import { CarComponent } from './page/car/car.component';
+import { TrueFalsePipe } from './pipe/true-false.pipe';
+import { DataTableComponent } from './common/data-table/data-table.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,9 @@ import { UserCardComponent } from './page/usercard/user.component';
     UserEditorComponent,
     FilterPipe,
     UserCardComponent,
+    CarComponent,
+    TrueFalsePipe,
+    DataTableComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +35,9 @@ import { UserCardComponent } from './page/usercard/user.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    {provide: DEFAULT_CURRENCY_CODE, useValue: 'HUF'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

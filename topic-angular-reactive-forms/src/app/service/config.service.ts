@@ -29,6 +29,16 @@ export class ConfigService {
     { title: 'Cat.', key: 'category' },
   ];
 
+  carTableColumns: ITableColumn[] = [
+    { key: 'id', title: 'Id' },
+    { key: 'model', title: 'Model' },
+    { key: 'make', title: 'Make' },
+    { key: 'year', title: 'Year' },
+    { key: 'price', title: 'Price' },
+    { key: 'stock', title: 'Stock' },
+    { key: 'active', title: 'Active' },
+  ];
+
   userEditorFormFields: FormField[] = [
     {
       label: 'Name',
