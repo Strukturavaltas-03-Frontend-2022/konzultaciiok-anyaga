@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "site": "katar-football-app",
+    "public": "dist/katar-football-app",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
