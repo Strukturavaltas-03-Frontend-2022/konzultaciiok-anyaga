@@ -5,4 +5,5 @@ export class User {
   name: string = '';
   email: string = '';
   category: string = '';
+  bio?: string = '';
 }

@@ -9,17 +9,41 @@
       style="max-width: 400px;"
       class="mx-auto"
     >
-      <div *ngFor="let field of fields" class="form-group">
+      <div
+        *ngFor="let field of fields"
+        class="form-group"
+      >
         <label>{{ field.label }}</label>
-        <input
-          [formControlName]="field.key"
-          [name]="field.key"
-          [type]="field.type"
-          class="form-control"
-        >
-        <div *ngIf="userFormGroup.controls[field.key].invalid" class="error-message">
-          Username must be minimum 5 characters long!
-        </div>
+        <ng-container [ngSwitch]="field.type">
+          <select
+            *ngSwitchCase="'select'"
+            [formControlName]="field.key"
+            [name]="field.key"
+            class="form-control"
+          >
+            <option
+              *ngFor="let opt of field.options"
+              [value]="opt.value"
+            > {{ opt.text }} </option>
+          </select>
+          <textarea
+            *ngSwitchCase="'textarea'"
+            [formControlName]="field.key"
+            [name]="field.key"
+            class="form-control"
+          ></textarea>
+          <input
+            *ngSwitchDefault
+            [formControlName]="field.key"
+            [name]="field.key"
+            [type]="field.type || 'text'"
+            class="form-control"
+          >
+        </ng-container>
+        <div
+          *ngIf="userFormGroup.controls[field.key].invalid"
+          class="error-message"
+        > Username must be minimum 5 characters long! </div>
       </div>
       <div class="d-grid gap-2 mt-3">
         <button

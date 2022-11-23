@@ -11,6 +11,7 @@ export class FormField {
   label: string = '';
   key: string = '';
   type?: string = 'text';
+  options?: {text: string, value: any}[];
   required?: boolean = true;
   validators?: ValidatorFn[] = [];
 }
@@ -59,9 +60,24 @@ export class ConfigService {
     {
       label: 'Category',
       key: 'category',
+      type: 'select',
+      options: [
+        {text: 'Admin', value: 'Admin'},
+        {text: 'Editor', value: 'Editor'},
+        {text: 'User', value: 'User'},
+        {text: 'Guest', value: 'Guest'},
+      ],
       validators: [
         Validators.required,
       ]
+    },
+    {
+      label: 'BIO',
+      key: 'bio',
+      type: 'textarea',
+      validators: [
+        Validators.required,
+      ],
     },
   ];
 
