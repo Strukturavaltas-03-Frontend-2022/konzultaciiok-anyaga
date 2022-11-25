@@ -23,6 +23,7 @@ export class CarComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    console.log( this.carService );
     this.carService.getAll();
   }
 

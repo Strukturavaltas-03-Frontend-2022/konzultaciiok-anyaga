@@ -10,9 +10,13 @@ import { BaseService } from './base.service';
 })
 export class CarService extends BaseService<Car> {
 
+  static ClassCount: number = 0;
+
   public override entityName: string = 'cars';
 
   constructor() {
     super();
+    CarService.ClassCount += 1;
+    console.log( CarService.ClassCount );
   }
 }

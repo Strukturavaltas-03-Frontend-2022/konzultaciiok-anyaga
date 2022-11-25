@@ -7,7 +7,12 @@ import { CarService } from 'src/app/service/car.service';
 @Component({
   selector: 'app-car-editor',
   templateUrl: './car-editor.component.html',
-  styleUrls: ['./car-editor.component.scss']
+  styleUrls: ['./car-editor.component.scss'],
+  providers: [
+    {
+      provide: CarService,
+    },
+  ],
 })
 export class CarEditorComponent implements OnInit {
 
@@ -17,12 +22,15 @@ export class CarEditorComponent implements OnInit {
 
   car$: Observable<Car | null> = this.carService.selected$;
 
+  carList$: Observable<Car[]> = this.carService.list$;
+
   constructor() { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(
       params => this.carService.get(params['id'])
     );
+    this.carService.getAll();
   }
 
 }

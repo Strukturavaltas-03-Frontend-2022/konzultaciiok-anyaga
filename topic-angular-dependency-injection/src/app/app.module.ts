@@ -15,6 +15,7 @@ import { CarComponent } from './page/car/car.component';
 import { TrueFalsePipe } from './pipe/true-false.pipe';
 import { DataTableComponent } from './common/data-table/data-table.component';
 import { CarEditorComponent } from './page/car-editor/car-editor.component';
+import { CarService } from './service/car.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { CarEditorComponent } from './page/car-editor/car-editor.component';
     ReactiveFormsModule,
   ],
   providers: [
-    {provide: DEFAULT_CURRENCY_CODE, useValue: 'HUF'}
+    {provide: DEFAULT_CURRENCY_CODE, useValue: 'HUF'},
   ],
   bootstrap: [AppComponent]
 })
