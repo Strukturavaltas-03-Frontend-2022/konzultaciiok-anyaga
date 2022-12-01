@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th 
+                        (click)="startSort(col.key)"
+                        *ngFor="let col of cols">
+                        <i *ngIf="col.key === sortKey && sortDirection === -1" class="fa fa-sort-amount-desc"></i>
+                        <i *ngIf="col.key === sortKey && sortDirection === 1" class="fa fa-sort-amount-asc"></i>
+                        {{ col.title }}
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of list | async | sort:sortKey:sortDirection">
+                    <td>{{ product.id }}</td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.price }}</td>
+                    <td>{{ product.category?.name }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

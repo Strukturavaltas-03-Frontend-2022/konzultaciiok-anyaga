@@ -1,0 +1,7 @@
+table th {
+    user-select: none;
+    cursor: pointer;
+    &:hover {
+        background-color: aqua;
+    }
+}
