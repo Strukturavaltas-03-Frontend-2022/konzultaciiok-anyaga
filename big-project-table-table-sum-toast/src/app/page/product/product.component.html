@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th (click)="startSort(col.key)" *ngFor="let col of cols">
+                        <i *ngIf="col.key === sortKey && sortDirection === -1" class="fa fa-sort-amount-desc"></i>
+                        <i *ngIf="col.key === sortKey && sortDirection === 1" class="fa fa-sort-amount-asc"></i>
+                        {{ col.title }}
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody *ngIf="list$ | async as list">
+                <tr *ngFor="let product of list | sort:sortKey:sortDirection">
+                    <td>{{ product.id }}</td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.price }}</td>
+                    <td>{{ product.category?.name }}</td>
+                    <td>
+                        <div class="btn-group">
+                            <button (click)="showSuccess()" class="btn btn-info">
+                                <i class="fa fa-save"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="table__tr--sum">
+                    <td>{{ list.length }}</td>
+                    <td>{{ '' }}</td>
+                    <td>{{ list | tableColSum:'price' }}</td>
+                    <td>{{ '' }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
