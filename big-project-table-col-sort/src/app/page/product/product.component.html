@@ -1,0 +1,58 @@
+<div class="row">
+    <div class="col-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th 
+                        id="{{ col.key }}"
+                        (click)="startSort(col.key)"
+                        (dragstart)="onHeaderDragStart($event)"
+                        (dragover)="$event.preventDefault()"
+                        (drop)="onHeaderDrop($event)"
+                        draggable="true"
+                        *ngFor="let col of cols">
+                        <i *ngIf="col.key === sortKey && sortDirection === -1" class="fa fa-sort-amount-desc"></i>
+                        <i *ngIf="col.key === sortKey && sortDirection === 1" class="fa fa-sort-amount-asc"></i>
+                        {{ col.title }}
+                        <i class="fa fa-arrows"></i>
+                    </th>
+                    <th>Category</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of list | async | sort:sortKey:sortDirection">
+                    <td *ngFor="let col of cols">{{ product[col.key] }}</td>
+                    <td>{{ product.category?.name }}</td>
+                    <td>
+                        <div class="btn-group">
+                            <button (click)="onDelete(confirmTemplate, product)" class="btn btn-danger">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<ng-template #confirmTemplate>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Comfirm</h4>
+    </div>
+    <div class="modal-body">
+      Do you delete the product: {{ lastSelectedProduct.name }}?
+      <div class="row">
+        <div class="col-12">
+            <button (click)="modalRef.hide()" class="btn btn-danger mr-3">
+                Cancel
+            </button>
+            <button (click)="startDelete()" class="btn btn-success">
+                Yes
+            </button>
+        </div>
+    </div>
+    </div>
+    
+  </ng-template>

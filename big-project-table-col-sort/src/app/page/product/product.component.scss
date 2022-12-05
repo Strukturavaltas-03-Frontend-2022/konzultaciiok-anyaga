@@ -1,0 +1,16 @@
+table th {
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+    .fa-arrows {
+        opacity: 0;
+        position: absolute;
+        right: 1em;
+    }
+    &:hover {
+        background-color: aqua;
+        .fa-arrows {
+            opacity: .5;
+        }
+    }
+}
