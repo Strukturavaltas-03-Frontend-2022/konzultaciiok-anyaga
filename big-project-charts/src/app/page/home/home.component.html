@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-6">
+        <div #chart>
+            <apx-chart
+                *ngIf="chartOptions"
+              [series]="chartOptions.series"
+              [chart]="chartOptions.chart"
+              [dataLabels]="chartOptions.dataLabels"
+              [plotOptions]="chartOptions.plotOptions"
+              [yaxis]="chartOptions.yaxis"
+              [xaxis]="chartOptions.xaxis"
+              [fill]="chartOptions.fill"
+              [title]="chartOptions.title"
+            ></apx-chart>
+          </div>
+    </div>
+</div>
