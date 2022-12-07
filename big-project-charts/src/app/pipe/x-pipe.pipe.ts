@@ -21,7 +21,7 @@ export class XPipePipe implements PipeTransform {
     let output = value;
     for (let i = 0; i < pipes.length; i++) {
       const args = pipeArgs ? pipeArgs[i] || [] : [];
-      if ((pipes[i] as unknown as {[x: string]: any})['transform']) {
+      if ((pipes[i] as {[x: string]: any})['transform']) {
         output = (pipes[i] as PipeTransform).transform(output, ...args);
       } else {
         output = (pipes[i] as unknown as Function)(output, ...args);
