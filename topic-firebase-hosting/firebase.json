@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "site": "moni-site-77",
+    "public": "dist/topic-firebase-hosting",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

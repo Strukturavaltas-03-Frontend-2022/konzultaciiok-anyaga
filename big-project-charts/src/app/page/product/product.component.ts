@@ -44,6 +44,8 @@ export class ProductComponent implements OnInit{
 
   lastSelectedProduct: Product = new Product();
 
+  isLoading: boolean = false;
+
   ngOnInit(): void {}
 
   startSort(key: string): void {
@@ -79,10 +81,17 @@ export class ProductComponent implements OnInit{
     this.lastSelectedProduct = product;
   }
 
-  startDelete(): void {
+  async startDelete(): Promise<any> {
+    this.isLoading = true;
+    await new Promise( r => setTimeout(r, 3000) );
+    this.isLoading = false;
     this.modalRef.hide();
     console.log("Run delete method!");
-    // this.productService.delete(this.lastSelectedProduct)
+    // this.productService.delete(this.lastSelectedProduct).subscribe(
+    //   data => {
+    //     this.isLoading = false;
+    //   }
+    // )
   }
 
   onUpdate(product: Product): void {

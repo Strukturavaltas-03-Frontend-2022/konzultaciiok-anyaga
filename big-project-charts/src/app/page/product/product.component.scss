@@ -1,16 +1,53 @@
-table th {
-    position: relative;
-    user-select: none;
-    cursor: pointer;
-    .fa-arrows {
-        opacity: 0;
-        position: absolute;
-        right: 1em;
-    }
-    &:hover {
-        background-color: aqua;
+table {
+    th {
+        position: relative;
+        user-select: none;
+        cursor: pointer;
+
         .fa-arrows {
-            opacity: .5;
+            opacity: 0;
+            position: absolute;
+            right: 1em;
         }
+
+        &:hover {
+            background-color: aqua;
+
+            .fa-arrows {
+                opacity: .5;
+            }
+        }
+    }
+}
+
+.modal-body {
+    .spinner__loading {
+        -webkit-animation: spinner_animation 2s linear infinite;
+        animation: spinner_animation 2s linear infinite;
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        display: none;
+        &.loading {
+            display: inline;
+            
+        }
+    }
+}
+
+@keyframes spinner_animation {
+    from {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+        -webkit-transform: rotate(359deg);
+    }
+}
+
+@-webkit-keyframes spinner_animation {
+    100% { 
+        -webkit-transform: rotate(360deg); 
+        transform:rotate(360deg); 
     }
 }
