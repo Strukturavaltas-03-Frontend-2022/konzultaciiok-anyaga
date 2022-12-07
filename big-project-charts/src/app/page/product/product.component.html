@@ -22,7 +22,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let product of list | async | sort:sortKey:sortDirection">
-                    <td *ngFor="let col of cols">{{ product[col.key] }}</td>
+                    <td *ngFor="let col of cols">{{ product[col.key] | xPipe:col.pipes:col.pipeArgs }}</td>
                     <td>{{ product.category?.name }}</td>
                     <td>
                         <div class="btn-group">

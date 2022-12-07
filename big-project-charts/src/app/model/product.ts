@@ -1,3 +1,4 @@
+import { Address } from "./address"
 import { Category } from "./category"
 
 export class Product {
@@ -6,4 +7,5 @@ export class Product {
     price: number = 0
     category?: Category = new Category()
     catID: number = 0
+    address?: Address = new Address();
 }

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { map, Observable, of } from 'rxjs';
+import { Address } from '../model/address';
 import { Product } from '../model/product';
 
 @Injectable({
@@ -30,6 +31,11 @@ export class ProductService {
   constructor() { }
 
   getAll(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.apiUrl);
+    return this.http.get<Product[]>(this.apiUrl).pipe(
+      map( list => list.map( p => {
+        p.address = new Address();
+        return p;
+      })),
+    );
   }
 }

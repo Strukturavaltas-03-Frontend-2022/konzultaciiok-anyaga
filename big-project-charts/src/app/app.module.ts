@@ -12,6 +12,7 @@ import { HomeComponent } from './page/home/home.component';
 import { ProductComponent } from './page/product/product.component';
 import { NavComponent } from './common/nav/nav.component';
 import { SortPipe } from './pipe/sort.pipe';
+import { XPipePipe } from './pipe/x-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SortPipe } from './pipe/sort.pipe';
     HomeComponent,
     ProductComponent,
     NavComponent,
-    SortPipe
+    SortPipe,
+    XPipePipe
   ],
   imports: [
     BrowserModule,
