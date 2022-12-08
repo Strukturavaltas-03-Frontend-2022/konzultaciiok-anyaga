@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { PieChartComponent } from 'ngx-chart';
 
 @Pipe({
   name: 'xPipe'
