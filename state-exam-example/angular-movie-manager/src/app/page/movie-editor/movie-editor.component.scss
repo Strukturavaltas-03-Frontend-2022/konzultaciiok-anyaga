@@ -1,0 +1,7 @@
+@use '../../../assets/scss/colors';
+
+.error-message {
+    color: colors.$error-color;
+    font-size: 0.75rem;
+    font-style: italic;
+}

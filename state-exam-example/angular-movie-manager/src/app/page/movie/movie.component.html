@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-12">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Year</th>
+                    <th>Category</th>
+                    <th>Active</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let movie of movieList | async">
+                    <td>{{ movie.id }}</td>
+                    <td>{{ movie.title }}</td>
+                    <td>{{ movie.year }}</td>
+                    <td>{{ movie.category }}</td>
+                    <td>{{ movie.active }}</td>
+                    <td>
+                        <div class="btn-group">
+                            <button [routerLink]="['/movie/edit', movie.id]" class="btn btn-info">
+                                <i class="fa fa-edit"></i>
+                            </button>
+                            <button (click)="onRemove(movie)" class="btn btn-danger">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

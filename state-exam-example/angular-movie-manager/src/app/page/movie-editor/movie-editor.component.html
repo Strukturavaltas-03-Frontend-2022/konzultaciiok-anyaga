@@ -1,0 +1,32 @@
+<div class="row">
+    <div *ngIf="movie$ | async as movie" class="col-12">
+        <form #movieForm="ngForm" (ngSubmit)="onUpdate(movie)">
+            <div class="form-goup">
+                <label>Title</label>
+                <input required [(ngModel)]="movie.title" name="title" type="text" class="form-control"
+                    pattern="^[A-Z][A-Z a-z0-9]{4,19}$">
+                <div *ngIf="movieForm.controls['title']?.invalid" class="error-message">
+                    Min 4 chars, max 20 chars, upperca, lowercase, space and numbers.
+                </div>
+            </div>
+            <div class="form-goup">
+                <label>Year</label>
+                <input required [(ngModel)]="movie.year" name="year" type="number" class="form-control">
+            </div>
+            <div class="form-goup">
+                <label>Category</label>
+                <input required [(ngModel)]="movie.category" name="category" type="text" class="form-control">
+            </div>
+            <div class="form-goup">
+                <label>Active</label>
+                <input required [(ngModel)]="movie.active" name="active" type="text" class="form-control">
+            </div>
+
+            <div class="d-grid mt-3">
+                <button [disabled]="movieForm.invalid" class="btn btn-primary btn-lg">
+                    <i class="fa fa-save"></i> Update
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
